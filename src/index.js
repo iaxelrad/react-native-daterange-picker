@@ -219,7 +219,7 @@ const DateRangePicker = ({
     function populateHeaders() {
       let _dayHeaders = [];
       for (let i = 0; i <= 6; ++i) {
-        let day = _moment(displayedDate).weekday(i).format("dddd").substr(0, 2);
+        let day = _moment(displayedDate).weekday(i).format("dd");
         _dayHeaders.push(
           <Header
             key={`dayHeader-${i}`}
@@ -230,7 +230,7 @@ const DateRangePicker = ({
           />
         );
       }
-      return _dayHeaders;
+      return _dayHeaders.reverse();
     }
 
     function populateWeeks() {
@@ -273,7 +273,7 @@ const DateRangePicker = ({
           }
           _weeks.push(
             <View key={"weeks-" + i} style={styles.week}>
-              {week}
+              {week.reverse()}
             </View>
           );
           week = [];
