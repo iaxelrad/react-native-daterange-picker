@@ -47,6 +47,7 @@ const DateRangePicker = ({
   buttonTextStyle,
   presetButtons,
   open,
+  showOkButton
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [weeks, setWeeks] = useState([]);
@@ -393,6 +394,15 @@ const DateRangePicker = ({
                   </>
                 )}
               </View>
+            )}
+            {showOkButton && (
+            <Button
+              buttonStyle={buttonStyle}
+              buttonTextStyle={buttonTextStyle}
+              onPress={_onClose}
+            >
+              אישור
+            </Button>
             )}
           </View>
         </View>
