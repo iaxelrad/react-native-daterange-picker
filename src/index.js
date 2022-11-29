@@ -336,7 +336,7 @@ const DateRangePicker = ({
         <View>
           <View style={mergedStyles.container}>
             <View style={styles.header}>
-              <TouchableOpacity onPress={previousMonth}>
+              <TouchableOpacity onPress={nextMonth}>
                 {monthPrevButton || (
                   <Image
                     resizeMode="contain"
@@ -350,7 +350,7 @@ const DateRangePicker = ({
                   " " +
                   displayedDate.format("YYYY")}
               </Text>
-              <TouchableOpacity onPress={nextMonth}>
+              <TouchableOpacity onPress={previousMonth}>
                 {monthNextButton || (
                   <Image
                     resizeMode="contain"
